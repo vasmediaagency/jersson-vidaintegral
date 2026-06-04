@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Jersson Aristizabal | Vida Integral</title>
+  <meta name="description" content="Salud · Bienestar · Libertad. Descubre los productos Fuxion con Jersson Aristizabal. Nutrición funcional disponible en más de 50 países.">
+  <meta property="og:title" content="Jersson Aristizabal | Vida Integral">
+  <meta property="og:description" content="Salud · Bienestar · Libertad. Nutrición funcional Fuxion.">
+  <meta property="og:image" content="https://linktr.ee/og/image/Vidaintegral.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #080808;
+      --bg-2:      #111111;
+      --bg-card:   rgba(200,148,27,0.05);
+      --border:    rgba(200,148,27,0.14);
+      --border-h:  rgba(200,148,27,0.30);
+      --gold:      #C8941B;
+      --gold-d:    #A37615;
+      --gold-dim:  rgba(200,148,27,0.12);
+      --gold-bright: #F0B429;
+      --white:     #F5EFE0;
+      --muted:     rgba(245,239,224,0.45);
+      --radius:    16px;
+      --radius-sm: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold-bright); }
+
+    .nav-links { display: flex; gap: 8px; align-items: center; }
+
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: color 0.2s, background 0.2s;
+      display: none;
+    }
+
+    @media (min-width: 640px) { .nav-link { display: block; } }
+
+    .nav-link:hover { color: var(--white); background: var(--bg-card); }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      color: #080808;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      transition: opacity 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 100px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(200,148,27,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(240,180,41,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 600px; }
+
+    /* Avatar */
+    .avatar-ring {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #8B6914, var(--gold-bright), #C8941B, #F0B429, #8B6914);
+      box-shadow: 0 0 40px rgba(200,148,27,0.3), 0 0 80px rgba(200,148,27,0.12);
+      margin: 0 auto 24px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    .avatar-ring img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #1a1408;
+      display: block;
+    }
+
+    .hero-name {
+      font-size: clamp(28px, 6vw, 46px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .hero-handle {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 16px;
+      animation: fadeUp 0.7s 0.25s ease both;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .hero-tagline .sep { opacity: 0.4; }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 420px;
+      margin: 0 auto 40px;
+      animation: fadeUp 0.7s 0.35s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-hero:active { transform: scale(0.97); }
+
+    .btn-hero.green {
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      color: #080808;
+      box-shadow: 0 4px 20px rgba(200,148,27,0.35);
+    }
+
+    .btn-hero.green:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(200,148,27,0.45);
+    }
+
+    .btn-hero.outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border-h);
+    }
+
+    .btn-hero.outline:hover {
+      background: var(--bg-card);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .scroll-hint {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: fadeUp 0.7s 0.6s ease both;
+    }
+
+    .scroll-arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%       { transform: rotate(45deg) translateY(4px); }
+    }
+
+    /* ─── SECTIONS COMMON ─── */
+    section { padding: 96px 24px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 500px;
+    }
+
+    .section-header { margin-bottom: 52px; }
+
+    .max-w { max-width: 1100px; margin: 0 auto; }
+
+    /* ─── BRAND VALUES ─── */
+    #about { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .value-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .value-icon { font-size: 28px; margin-bottom: 14px; }
+
+    .value-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+
+    .value-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ─── PRODUCTS ─── */
+    #products { background: var(--bg); }
+
+    /* Category filter */
+    .cat-filter {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 40px;
+      scrollbar-width: none;
+    }
+
+    .cat-filter::-webkit-scrollbar { display: none; }
+
+    .cat-btn {
+      flex-shrink: 0;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .cat-btn:hover { border-color: var(--gold); color: var(--white); }
+
+    .cat-btn.active {
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      border-color: var(--gold);
+      color: #080808;
+    }
+
+    /* Product grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      border-color: rgba(200,148,27,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .product-card.hidden { display: none; }
+
+    .product-cat-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      opacity: 0.85;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .product-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 20px;
+      border-radius: var(--radius-sm);
+      background: var(--gold-dim);
+      border: 1px solid rgba(200,148,27,0.25);
+      color: var(--gold-bright);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 6px;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .product-cta:hover {
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      border-color: var(--gold);
+      color: #080808;
+    }
+
+    /* ─── COUNTRIES ─── */
+    #countries { background: var(--bg-2); }
+
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .region-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .region-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .country-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .country-pill {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+    }
+
+    .country-count {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--gold-bright);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .country-stat { margin-bottom: 36px; }
+
+    .country-stat p { font-size: 14px; color: var(--muted); }
+
+    /* ─── CTA FINAL ─── */
+    #cta {
+      background: linear-gradient(135deg, #130f02 0%, #080808 100%);
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .cta-inner .section-title { margin-bottom: 20px; }
+
+    .cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    /* Social links */
+    .social-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+
+    .social-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold-bright);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 28px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer span { color: var(--gold-bright); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider-line {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    /* ─── NAV LOGO IMG ─── */
+    .nav-logo-img { height: 34px; width: auto; display: block; }
+
+    /* ─── HERO STATS ─── */
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.7s 0.5s ease both;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .hero-stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 5px; }
+
+    /* ─── PRODUCT IMAGE ─── */
+    .product-img {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      background: rgba(200,148,27,0.04);
+      border: 1px solid var(--border);
+      padding: 10px;
+    }
+    .product-img-placeholder {
+      width: 100%;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      background: rgba(200,148,27,0.04);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    /* ─── AMAZON BACKGROUND ─── */
+    body {
+      background-image:
+        radial-gradient(ellipse 70% 50% at 5% 15%, rgba(18,55,12,0.38) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 45% at 95% 70%, rgba(14,44,10,0.30) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 35% at 50% 40%, rgba(200,148,27,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 30% 25% at 80% 5%, rgba(12,38,8,0.22) 0%, transparent 45%);
+    }
+
+    /* Noise grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* Section z-index fix */
+    nav, section, footer { position: relative; z-index: 1; }
+
+    /* Amazon silhouette layer */
+    .amazon-silhouette {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      pointer-events: none;
+      z-index: 0;
+      line-height: 0;
+    }
+
+    .amazon-silhouette svg { width: 100%; display: block; }
+
+    #hero { overflow: visible; }
+    #hero .hero-inner { position: relative; z-index: 2; }
+
+    /* Section depth gradients */
+    #about::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 10% 50%, rgba(10,35,8,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 90% 20%, rgba(200,148,27,0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    #about .max-w { position: relative; z-index: 1; }
+
+    #products::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(12,40,10,0.1) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 20% 30%, rgba(200,148,27,0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    #products .max-w { position: relative; z-index: 1; }
+
+    /* ─── PRODUCT TOGGLE BUTTON ─── */
+    .product-toggle {
+      width: 100%;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 7px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      margin-top: 8px;
+      font-family: inherit;
+    }
+    .product-toggle:hover {
+      border-color: rgba(200,148,27,0.4);
+      color: var(--gold-bright);
+      background: rgba(200,148,27,0.05);
+    }
+
+    /* ─── PRODUCT MODAL ─── */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-panel {
+      background: #141414;
+      border: 1px solid rgba(200,148,27,0.22);
+      border-radius: 22px;
+      width: 100%;
+      max-width: 420px;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 28px 24px 32px;
+      position: relative;
+      transform: translateY(24px) scale(0.96);
+      transition: transform 0.28s cubic-bezier(0.34,1.26,0.64,1);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(200,148,27,0.18) transparent;
+    }
+    .modal-backdrop.open .modal-panel {
+      transform: translateY(0) scale(1);
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: var(--muted);
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.18s, color 0.18s;
+      line-height: 1;
+      font-family: inherit;
+    }
+    .modal-close:hover { background: rgba(200,148,27,0.14); color: var(--gold-bright); }
+    .modal-img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(200,148,27,0.04);
+      border: 1px solid var(--border);
+      padding: 10px;
+      margin-bottom: 18px;
+      display: block;
+    }
+    .modal-img.hidden { display: none; }
+    .modal-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+    }
+    .modal-name {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .modal-block { margin-bottom: 16px; }
+    .modal-block:last-of-type { margin-bottom: 0; }
+    .modal-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .modal-text {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .modal-list { list-style: none; padding: 0; margin: 0; }
+    .modal-list li {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      padding: 3px 0 3px 18px;
+      position: relative;
+    }
+    .modal-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 10px;
+      top: 4px;
+    }
+    .modal-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 13px 20px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      color: #080808;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 22px;
+      transition: opacity 0.18s, transform 0.15s;
+    }
+    .modal-cta:hover { opacity: 0.86; transform: translateY(-1px); }
+
+    /* ─── FUXION ACCORDION ─── */
+    #fuxion-info { background: var(--bg-2); }
+    .accordion { display: flex; flex-direction: column; gap: 10px; margin-top: 48px; }
+    .accordion-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .accordion-item.open { border-color: rgba(200,148,27,0.4); }
+    .accordion-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+    }
+    .acc-left { display: flex; align-items: center; gap: 14px; }
+    .acc-icon { font-size: 22px; }
+    .acc-title { font-size: 15px; font-weight: 700; color: var(--white); }
+    .acc-arrow {
+      width: 9px; height: 9px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      transition: transform 0.3s, border-color 0.2s;
+      margin-bottom: 4px;
+    }
+    .accordion-item.open .acc-arrow {
+      transform: rotate(-135deg);
+      border-color: var(--gold);
+      margin-bottom: 0;
+      margin-top: 4px;
+    }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .accordion-item.open .accordion-body { max-height: 700px; }
+    .accordion-content {
+      padding: 0 24px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .accordion-content p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.78;
+      margin: 14px 0 0;
+    }
+    .accordion-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+    .accordion-content ul li {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+    .accordion-content ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .acc-highlight {
+      background: rgba(200,148,27,0.06);
+      border-left: 3px solid var(--gold);
+      padding: 11px 15px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--white);
+      opacity: 0.9;
+    }
+
+    /* ─── HERO PALM SIDES ─── */
+    .hero-palm {
+      position: absolute;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+      line-height: 0;
+    }
+    .hero-palm-left  { left: 0;  width: clamp(90px, 14vw, 230px); }
+    .hero-palm-right { right: 0; width: clamp(80px, 12vw, 200px); }
+    .hero-palm svg { display: block; width: 100%; height: auto; }
+    @media (max-width: 500px) {
+      .hero-palm { opacity: 0.45; }
+      .hero-palm-left  { width: clamp(65px, 18vw, 110px); }
+      .hero-palm-right { width: clamp(58px, 15vw, 95px); }
+    }
+
+    /* ─── BUSINESS SECTION ─── */
+    #negocio {
+      background: linear-gradient(180deg, var(--bg-2) 0%, #0c1a09 40%, var(--bg-2) 100%);
+      overflow: hidden;
+    }
+
+    #negocio::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 15% 50%, rgba(8,48,6,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85% 30%, rgba(200,148,27,0.07) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    #negocio .max-w { position: relative; z-index: 1; }
+
+    .biz-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 52px;
+    }
+
+    .biz-card {
+      background: rgba(8,24,5,0.6);
+      border: 1px solid rgba(200,148,27,0.18);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .biz-card:hover {
+      border-color: rgba(200,148,27,0.45);
+      transform: translateY(-3px);
+    }
+
+    .biz-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+      opacity: 0.6;
+    }
+
+    .biz-icon { font-size: 36px; margin-bottom: 18px; }
+
+    .biz-pct {
+      font-size: clamp(42px, 8vw, 64px);
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .biz-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .biz-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .biz-bar {
+      margin-top: 20px;
+      height: 6px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .biz-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+      animation: barGrow 1.4s 0.3s ease both;
+    }
+
+    @keyframes barGrow {
+      from { width: 0 !important; }
+    }
+
+    .biz-cta-wrap {
+      text-align: center;
+      margin-top: 52px;
+    }
+
+    .biz-disclaimer {
+      font-size: 11px;
+      color: var(--muted);
+      opacity: 0.6;
+      margin-top: 16px;
+    }
+
+    /* ─── FLOATING WHATSAPP ─── */
+    .wa-float {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 200;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.45);
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 36px rgba(37,211,102,0.55); }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <img src="logo.jpg" alt="Jersson Aristizabal" class="nav-logo-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span style="display:none">Vida<span style="color:var(--gold-bright)">Integral</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#products" class="nav-link">Productos</a>
+      <a href="#fuxion-info" class="nav-link">FuXion</a>
+      <a href="#negocio" class="nav-link">Negocio</a>
+      <a href="#countries" class="nav-link">Países</a>
+      <a href="https://wa.me/message/RZAF4BNYGMUEC1" target="_blank" rel="noopener" class="nav-cta">WhatsApp</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="avatar-ring">
+        <img src="foto.jpg" alt="Jersson Aristizabal"
+             onerror="this.src='logo.jpg'">
+      </div>
+
+      <h1 class="hero-name">Jersson Aristizabal</h1>
+      <p class="hero-handle">@jersson.aristizabal</p>
+
+      <div class="hero-tagline">
+        <span>Salud</span>
+        <span class="sep">·</span>
+        <span>Bienestar</span>
+        <span class="sep">·</span>
+        <span>Libertad</span>
+      </div>
+
+      <p class="hero-desc">
+        Transformo vidas a través de la nutrición funcional de alta tecnología.
+        Productos disponibles en más de 50 países.
+      </p>
+
+      <div class="hero-btns">
+        <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="btn-hero green">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Comprar ahora
+        </a>
+        <a href="https://wa.me/message/RZAF4BNYGMUEC1" target="_blank" rel="noopener" class="btn-hero outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Contactar
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">50+</div>
+          <div class="hero-stat-label">Países</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">30+</div>
+          <div class="hero-stat-label">Productos</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Natural</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-label">Años de ciencia</div>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Descubrir más</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+
+    <!-- Amazon silhouette — layered canopy with emergent trees -->
+    <div class="amazon-silhouette">
+      <svg viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <!-- Far layer — distant canopy with tall emergent trees -->
+        <path fill="#1c3c12"
+          d="M0,300 L0,190
+             Q50,186 80,178
+             Q115,166 150,152
+             Q182,138 215,118
+             Q248,138 280,152
+             Q315,166 355,160
+             Q390,152 425,132
+             Q458,152 492,162
+             Q528,168 565,162
+             Q598,152 635,128
+             Q668,152 702,162
+             Q738,168 775,162
+             Q808,152 845,130
+             Q878,152 912,162
+             Q948,168 985,162
+             Q1018,150 1055,124
+             Q1090,150 1125,162
+             Q1162,168 1198,162
+             Q1232,150 1268,130
+             Q1302,150 1336,160
+             Q1375,166 1440,168
+          L1440,300 Z"/>
+        <!-- Mid layer — main jungle canopy -->
+        <path fill="#112810"
+          d="M0,300 L0,230
+             Q50,226 80,220
+             Q115,212 150,200
+             Q182,190 215,178
+             Q248,190 280,200
+             Q315,210 355,206
+             Q390,200 425,186
+             Q458,200 492,208
+             Q528,213 565,208
+             Q598,200 635,184
+             Q668,200 702,208
+             Q738,213 775,208
+             Q808,200 845,186
+             Q878,200 912,208
+             Q948,213 985,208
+             Q1018,198 1055,182
+             Q1090,198 1125,208
+             Q1162,213 1198,208
+             Q1232,198 1268,184
+             Q1302,198 1336,206
+             Q1375,210 1440,212
+          L1440,300 Z"/>
+        <!-- Front layer — foreground undergrowth -->
+        <path fill="#091509"
+          d="M0,300 L0,268
+             Q50,265 80,260
+             Q115,255 150,248
+             Q182,242 215,234
+             Q248,242 280,248
+             Q315,254 355,252
+             Q390,248 425,240
+             Q458,248 492,253
+             Q528,256 565,252
+             Q598,248 635,240
+             Q668,248 702,253
+             Q738,256 775,252
+             Q808,248 845,240
+             Q878,248 912,253
+             Q948,256 985,252
+             Q1018,246 1055,238
+             Q1090,246 1125,253
+             Q1162,256 1198,252
+             Q1232,246 1268,240
+             Q1302,246 1336,252
+             Q1375,254 1440,256
+          L1440,300 Z"/>
+      </svg>
+    </div>
+
+    <!-- Side palm trees -->
+    <div class="hero-palm hero-palm-left">
+      <svg viewBox="0 0 200 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
+        <!-- Main palm trunk -->
+        <path fill="#102008" d="M82,460 C80,415 76,370 72,325 C68,285 64,248 62,210 C60,178 58,150 56,122 C54,98 52,78 54,60 C56,45 58,32 60,24"/>
+        <!-- Fronds from crown (60,24) -->
+        <path fill="#152c0f" d="M60,24 C46,10 26,0 5,0 C24,5 46,12 60,24Z"/>
+        <path fill="#0f2409" d="M60,24 C42,16 18,12 0,14 C20,11 44,16 60,24Z"/>
+        <path fill="#152c0f" d="M60,24 C76,10 98,0 122,0 C102,4 78,12 60,24Z"/>
+        <path fill="#0f2409" d="M60,24 C80,16 104,12 126,14 C104,11 80,16 60,24Z"/>
+        <path fill="#132a0d" d="M60,24 C62,8 68,0 78,0 C71,0 63,8 60,24Z"/>
+        <path fill="#0d2207" d="M60,24 C56,8 50,0 40,0 C47,0 55,8 60,24Z"/>
+        <!-- Second smaller palm behind -->
+        <path fill="#0c1a06" d="M148,460 C146,420 142,380 138,340 C134,305 130,272 127,240 C124,212 122,188 120,165 C118,145 117,128 118,114"/>
+        <path fill="#10220a" d="M118,114 C102,100 82,88 62,84 C82,88 104,99 118,114Z"/>
+        <path fill="#0d1f07" d="M118,114 C136,100 158,90 180,88 C160,90 138,100 118,114Z"/>
+        <path fill="#10220a" d="M118,114 C132,94 150,78 172,68 C152,76 134,93 118,114Z"/>
+        <path fill="#0c1a06" d="M118,114 C104,90 92,72 84,58 C92,70 105,89 118,114Z"/>
+      </svg>
+    </div>
+
+    <div class="hero-palm hero-palm-right">
+      <svg viewBox="0 0 200 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMax meet">
+        <!-- Main palm trunk (mirrored) -->
+        <path fill="#102008" d="M118,460 C120,415 124,370 128,325 C132,285 136,248 138,210 C140,178 142,150 144,122 C146,98 148,78 146,60 C144,45 142,32 140,24"/>
+        <!-- Fronds from crown (140,24) -->
+        <path fill="#152c0f" d="M140,24 C154,10 174,0 195,0 C176,5 154,12 140,24Z"/>
+        <path fill="#0f2409" d="M140,24 C158,16 182,12 200,14 C180,11 156,16 140,24Z"/>
+        <path fill="#152c0f" d="M140,24 C124,10 102,0 78,0 C98,4 122,12 140,24Z"/>
+        <path fill="#0f2409" d="M140,24 C120,16 96,12 74,14 C96,11 120,16 140,24Z"/>
+        <path fill="#132a0d" d="M140,24 C138,8 132,0 122,0 C129,0 137,8 140,24Z"/>
+        <path fill="#0d2207" d="M140,24 C144,8 150,0 160,0 C153,0 145,8 140,24Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section id="about">
+    <div class="max-w">
+      <div class="section-header reveal">
+        <div class="section-label">¿Por qué Fuxion?</div>
+        <div class="divider-line"></div>
+        <h2 class="section-title">Ciencia ancestral.<br>Tecnología de vanguardia.</h2>
+        <p class="section-sub">
+          Fuxion fusiona el conocimiento milenario de culturas andina, amazónica y asiática
+          con los últimos avances en biología celular y nutrición humana.
+        </p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">🌱</div>
+          <div class="value-title">Ingredientes naturales</div>
+          <div class="value-text">Extractos de plantas, adaptógenos y superalimentos de las culturas más longevas del planeta.</div>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">🔬</div>
+          <div class="value-title">Biotecnología aplicada</div>
+          <div class="value-text">Formulaciones respaldadas por investigación científica para máxima biodisponibilidad y eficacia.</div>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">✈️</div>
+          <div class="value-title">Disponible en 50+ países</div>
+          <div class="value-text">Una red global que lleva nutrición de calidad a personas en América, Europa y más allá.</div>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">💧</div>
+          <div class="value-title">Fácil de consumir</div>
+          <div class="value-text">Bebidas funcionales en prácticos sticks o sobres. Solo añade agua. Sin complicaciones.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FUXION INFO ═══════════ -->
+  <section id="fuxion-info">
+    <div class="max-w">
+      <div class="section-header reveal">
+        <div class="section-label">Conoce a FuXion</div>
+        <div class="divider-line"></div>
+        <h2 class="section-title">Ciencia, calidad y confianza</h2>
+        <p class="section-sub">Todo lo que necesitas saber sobre la empresa detrás de los productos.</p>
+      </div>
+
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <div class="acc-left">
+              <span class="acc-icon">🌿</span>
+              <span class="acc-title">Historia de FuXion</span>
+            </div>
+            <div class="acc-arrow"></div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p>FuXion fue fundada en 2006 por Carlos Aguilera y un equipo de emprendedores latinoamericanos con una visión clara: llevar la sabiduría ancestral de los Andes y la Amazonía al mundo a través de la biotecnología moderna.</p>
+              <p>Lo que comenzó como un proyecto local en Perú se convirtió en una compañía global con sede en Miami y presencia en más de 50 países en América, Europa y Asia.</p>
+              <div class="acc-highlight">Más de 15 años fusionando el conocimiento milenario de los pueblos andinos, amazónicos y asiáticos con los avances más recientes en biología celular y nutrición humana.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <div class="acc-left">
+              <span class="acc-icon">🔬</span>
+              <span class="acc-title">Seguridad y calidad saludable</span>
+            </div>
+            <div class="acc-arrow"></div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p>Todos los productos FuXion se elaboran bajo estrictos estándares de calidad con ingredientes de origen natural, sin conservantes artificiales ni colorantes sintéticos.</p>
+              <ul>
+                <li>Formulaciones validadas antes de cada lanzamiento al mercado</li>
+                <li>Ingredientes naturales verificados por fuentes certificadas</li>
+                <li>Sin OMG (organismos modificados genéticamente)</li>
+                <li>Control de calidad en cada lote de producción</li>
+                <li>Trazabilidad completa desde el origen de cada ingrediente</li>
+              </ul>
+              <div class="acc-highlight">Los productos son seguros para consumo regular. No son medicamentos ni reemplazan tratamientos médicos. Consulta a tu médico si tienes condiciones de salud especiales.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <div class="acc-left">
+              <span class="acc-icon">🏆</span>
+              <span class="acc-title">Certificaciones internacionales</span>
+            </div>
+            <div class="acc-arrow"></div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p>FuXion opera bajo los más altos estándares regulatorios internacionales para garantizar seguridad y eficacia en todos sus mercados:</p>
+              <ul>
+                <li>Plantas de manufactura certificadas GMP (Buenas Prácticas de Manufactura)</li>
+                <li>Cumplimiento normativo FDA para distribución en Estados Unidos</li>
+                <li>Registro INVIMA activo para Colombia</li>
+                <li>Certificación DIGEMID para el mercado peruano</li>
+                <li>Aprobación COFEPRIS para México</li>
+                <li>Registro sanitario vigente en todos los países de operación</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <div class="acc-left">
+              <span class="acc-icon">⚗️</span>
+              <span class="acc-title">Ciencia e innovación</span>
+            </div>
+            <div class="acc-arrow"></div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p>El departamento de I+D de FuXion trabaja continuamente en la formulación de nuevas soluciones nutricionales respaldadas por la evidencia científica más reciente.</p>
+              <ul>
+                <li>Ingredientes con respaldo clínico publicado en revistas científicas indexadas</li>
+                <li>Tecnología de microencapsulación para máxima biodisponibilidad</li>
+                <li>Extractos estandarizados con concentración activa garantizada</li>
+                <li>Sinergia activa: cada ingrediente potencia al siguiente</li>
+                <li>Actualización continua de fórmulas según nuevas investigaciones</li>
+              </ul>
+              <div class="acc-highlight">La fusión entre las tradiciones ancestrales de Oriente y Occidente no es un concepto de marketing: es el principio fundamental detrás de cada fórmula.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <div class="acc-left">
+              <span class="acc-icon">🌐</span>
+              <span class="acc-title">Modelo de distribución</span>
+            </div>
+            <div class="acc-arrow"></div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p>FuXion opera bajo un modelo de distribución directa que elimina intermediarios y lleva los productos directamente del fabricante al consumidor final.</p>
+              <ul>
+                <li>Compra directa a través de la tienda online oficial del distribuidor</li>
+                <li>Red de distribuidores independientes en más de 50 países</li>
+                <li>Comisiones inmediatas por venta directa del 25% al 50%</li>
+                <li>Plan de compensación con ingresos residuales por equipo</li>
+                <li>Formación, soporte y herramientas para cada distribuidor</li>
+              </ul>
+              <div class="acc-highlight">Si estás en España, Colombia, México o cualquier otro país donde FuXion opera, puedes comprar directamente desde la tienda online de Jersson con entrega a domicilio.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PRODUCTS ═══════════ -->
+  <section id="products">
+    <div class="max-w">
+      <div class="section-header reveal">
+        <div class="section-label">Catálogo completo</div>
+        <div class="divider-line"></div>
+        <h2 class="section-title">Elige tu transformación</h2>
+        <p class="section-sub">Bebidas nutracéuticas y cosmecéuticos diseñados para cada objetivo. Filtra por categoría.</p>
+      </div>
+
+      <!-- Category filter -->
+      <div class="cat-filter" id="catFilter">
+        <button class="cat-btn active" data-cat="all">Todos</button>
+        <button class="cat-btn" data-cat="detox">🌿 Detox</button>
+        <button class="cat-btn" data-cat="nutricion">💪 Nutrición</button>
+        <button class="cat-btn" data-cat="energia">⚡ Energía</button>
+        <button class="cat-btn" data-cat="peso">⚖️ Peso</button>
+        <button class="cat-btn" data-cat="antiedad">✨ Antiedad</button>
+        <button class="cat-btn" data-cat="inmune">🛡️ Inmune</button>
+        <button class="cat-btn" data-cat="mental">🧠 Mental</button>
+        <button class="cat-btn" data-cat="deporte">🏃 Deporte</button>
+        <button class="cat-btn" data-cat="cosmetico">💄 Cosmético</button>
+      </div>
+
+      <!-- Product grid -->
+      <div class="products-grid" id="productsGrid">
+
+        <!-- DETOX -->
+        <div class="product-card" data-cat="detox">
+          <img src="https://suprabodies.com/cdn/shop/files/Prunex_1_Fuxion.png?v=1745247795" alt="Prunex 1" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🌿 Limpieza y Detox</div>
+          <div class="product-name">Prunex 1</div>
+          <div class="product-desc">Bebida con fibra para el bienestar digestivo. Favorece el tránsito intestinal de forma natural.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="detox">
+          <img src="https://suprabodies.com/cdn/shop/files/Flora_Liv_Fuxion.png?v=1745247725" alt="Flora Liv" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🌿 Limpieza y Detox</div>
+          <div class="product-name">Flora Liv</div>
+          <div class="product-desc">Bebida probiótica para el equilibrio intestinal. Restaura la flora bacteriana de forma eficaz.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="detox">
+          <img src="https://suprabodies.com/cdn/shop/files/FUXION_ALPHA_BAL_MEXICO.png?v=1748274298" alt="Alpha Balance" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🌿 Limpieza y Detox</div>
+          <div class="product-name">Alpha Balance</div>
+          <div class="product-desc">Bebida alcalinizante de vegetales verdes. Equilibra el pH del organismo y potencia la energía celular.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="detox">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/BERRY-600x600.jpg" alt="Berry Balance" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🌿 Limpieza y Detox</div>
+          <div class="product-name">Berry Balance</div>
+          <div class="product-desc">Bebida antioxidante de frutos rojos. Combate los radicales libres y protege las células.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="detox">
+          <img src="https://suprabodies.com/cdn/shop/files/FUXION_REXET_MEXICO.png?v=1748274244" alt="Rexet" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🌿 Limpieza y Detox</div>
+          <div class="product-name">Rexet</div>
+          <div class="product-desc">Bebida efervescente para el bienestar hepático. Apoya la función del hígado de forma natural.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="detox">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/pack-detox.jpg" alt="Pack Detox 5 días" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🌿 Limpieza y Detox</div>
+          <div class="product-name">Pack Detox 5 días</div>
+          <div class="product-desc">Programa completo de limpieza y desintoxicación en 5 días. Resultados visibles desde el primer ciclo.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <!-- NUTRICIÓN -->
+        <div class="product-card" data-cat="nutricion">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/biopro-prod.jpg" alt="Biopro+ Tect" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">💪 Nutrición y Regeneración</div>
+          <div class="product-name">Biopro+ Tect</div>
+          <div class="product-desc">Batido proteico con colostrum. Nutrición completa para la regeneración celular y el sistema inmune.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="nutricion">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/07/sport-protein-active-600x600.jpg" alt="Protein Active" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">💪 Nutrición y Regeneración</div>
+          <div class="product-name">Protein Active</div>
+          <div class="product-desc">Proteína vegetal de alta biodisponibilidad. Ideal para quienes buscan nutrición plant-based de calidad.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <!-- ENERGÍA -->
+        <div class="product-card" data-cat="energia">
+          <img src="https://suprabodies.com/cdn/shop/files/Vita_Xtra_T_Fuxion.png?v=1745249900" alt="Vita Xtra T+" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">⚡ Energía y Vitalidad</div>
+          <div class="product-name">Vita Xtra T+</div>
+          <div class="product-desc">Bebida antioxidante energizante. Vitalidad sostenida durante todo el día sin picos ni caídas.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="energia">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/xpeed-prod.jpg" alt="Xpeed" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">⚡ Energía y Vitalidad</div>
+          <div class="product-name">Xpeed</div>
+          <div class="product-desc">Bebida energizante natural con guaraná. Energía inmediata y concentración mental potenciada.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="energia">
+          <img src="https://suprabodies.com/cdn/shop/files/Nutraday_Fuxion.png?v=1745249972" alt="Nutraday" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">⚡ Energía y Vitalidad</div>
+          <div class="product-name">Nutraday</div>
+          <div class="product-desc">Bebida nutritiva para energía diaria. La combinación perfecta de vitaminas y minerales esenciales.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <!-- PESO -->
+        <div class="product-card" data-cat="peso">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/PACK-514-FUXION-BIENESTAR-600x600.jpeg" alt="Pack 5/14 Keto" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">⚖️ Control de Peso</div>
+          <div class="product-name">Pack 5/14 Keto</div>
+          <div class="product-desc">Programa nutricional para control de peso en modalidad keto. Resultados desde la primera semana.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="peso">
+          <img src="https://suprabodies.com/cdn/shop/files/Thermo_T3_Fuxion.png?v=1745776884" alt="Thermo T3" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">⚖️ Control de Peso</div>
+          <div class="product-name">Thermo T3</div>
+          <div class="product-desc">Bebida termogénica para control de peso. Activa el metabolismo y favorece la quema de grasa.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="peso">
+          <img src="https://suprabodies.com/cdn/shop/files/Cafe_Fit_Fuxion.png?v=1745250017" alt="Café & Café Fit" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">⚖️ Control de Peso</div>
+          <div class="product-name">Café & Café Fit</div>
+          <div class="product-desc">Bebida de café verde funcional. El placer del café con el beneficio de la pérdida de peso.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="peso">
+          <img src="https://suprabodies.com/cdn/shop/files/Nocarb_T_Fuxion.png?v=1745247774" alt="Nocarb-T" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">⚖️ Control de Peso</div>
+          <div class="product-name">Nocarb-T</div>
+          <div class="product-desc">Bebida con fibra para el control del apetito. Reduce los antojos y te mantiene saciado por más tiempo.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="peso">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/chocolate_fit_prod.jpg" alt="Chocolate Fit" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">⚖️ Control de Peso</div>
+          <div class="product-name">Chocolate Fit</div>
+          <div class="product-desc">Bebida de cacao funcional. Satisface el antojo de dulce mientras cuidas tu figura.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <!-- ANTIEDAD -->
+        <div class="product-card" data-cat="antiedad">
+          <img src="https://suprabodies.com/cdn/shop/files/Beauty_In_Fuxion.png?v=1745247829" alt="Beauty-In" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">✨ Antiedad</div>
+          <div class="product-name">Beauty-In</div>
+          <div class="product-desc">Bebida con colágeno bioactivo para la piel. Firmeza, luminosidad e hidratación desde adentro.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="antiedad">
+          <img src="https://suprabodies.com/cdn/shop/files/Youth_Elixir_Fuxion.png?v=1745249995" alt="Youth Elixir" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">✨ Antiedad</div>
+          <div class="product-name">Youth Elixir</div>
+          <div class="product-desc">Bebida antioxidante con aminoácidos. Combate el envejecimiento celular para verte y sentirte joven.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="antiedad">
+          <img src="https://suprabodies.com/cdn/shop/files/Golden_Flx_Fuxion.png?v=1745250039" alt="Golden Flx" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">✨ Antiedad</div>
+          <div class="product-name">Golden Flx</div>
+          <div class="product-desc">Bebida con extracto de cúrcuma. Antiinflamatorio natural con poderosa acción antioxidante.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <!-- INMUNE -->
+        <div class="product-card" data-cat="inmune">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/VERA-FUXION-BIENESTAR-600x600.jpeg" alt="Vera+" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🛡️ Sistema Inmune</div>
+          <div class="product-name">Vera+</div>
+          <div class="product-desc">Bebida herbal para el bienestar inmunológico. Fortalece las defensas naturales del organismo.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="inmune">
+          <img src="https://suprabodies.com/cdn/shop/files/Gano_Cappuccino_Fuxion.png?v=1745249926" alt="Gano+ Capuccino" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🛡️ Sistema Inmune</div>
+          <div class="product-name">Gano+ Capuccino</div>
+          <div class="product-desc">Café con extracto de ganoderma. El hongo más estudiado del mundo en tu taza de café favorita.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="inmune">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/GANO-TE-600x600.jpg" alt="Gano+ T" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🛡️ Sistema Inmune</div>
+          <div class="product-name">Gano+ T</div>
+          <div class="product-desc">Bebida herbal con ganoderma y té blanco. Protección inmune con el poder de dos superalimentos.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="inmune">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/duo-defense-pro.jpg" alt="Duo Defense" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🛡️ Sistema Inmune</div>
+          <div class="product-name">Duo Defense</div>
+          <div class="product-desc">Combinación sinérgica de bebidas para el bienestar inmunológico. Doble protección en un solo pack.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <!-- MENTAL -->
+        <div class="product-card" data-cat="mental">
+          <img src="https://suprabodies.com/cdn/shop/files/On_Fuxion.png?v=1745249950" alt="On" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🧠 Vigor Mental</div>
+          <div class="product-name">On</div>
+          <div class="product-desc">Bebida funcional para energía mental y concentración. Claridad cognitiva cuando más la necesitas.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="mental">
+          <img src="https://suprabodies.com/cdn/shop/files/No-stress-Fuxion.jpg?v=1741458741" alt="No Stress" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🧠 Vigor Mental</div>
+          <div class="product-name">No Stress</div>
+          <div class="product-desc">Bebida con aminoácidos para la relajación mental. Calma la mente sin generar somnolencia.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <!-- DEPORTE -->
+        <div class="product-card" data-cat="deporte">
+          <img src="https://suprabodies.com/cdn/shop/files/Pres_Sport_Fuxion.png?v=1745250160" alt="Pre Sport" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🏃 Rendimiento Deportivo</div>
+          <div class="product-name">Pre Sport</div>
+          <div class="product-desc">Bebida energizante para entrenamiento deportivo. Maximiza tu rendimiento antes de cada sesión.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="deporte">
+          <img src="https://suprabodies.com/cdn/shop/files/Post_Sport_Fuxion.png?v=1745250178" alt="Post Sport" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🏃 Rendimiento Deportivo</div>
+          <div class="product-name">Post Sport</div>
+          <div class="product-desc">Bebida recuperadora después del ejercicio. Reduce el tiempo de recuperación muscular.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="deporte">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/xtra-mile-produc.png" alt="Xtra Mile" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🏃 Rendimiento Deportivo</div>
+          <div class="product-name">Xtra Mile</div>
+          <div class="product-desc">Bebida isotónica para resistencia física. Ve más lejos con hidratación inteligente y electrolitos.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="deporte">
+          <img src="https://suprabodies.com/cdn/shop/files/Biopro_Sport_Fuxion.png?v=1745250066" alt="Biopro+ Sport" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">🏃 Rendimiento Deportivo</div>
+          <div class="product-name">Biopro+ Sport</div>
+          <div class="product-desc">Batido proteico para el desarrollo muscular. Nutrición de élite para atletas y deportistas.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <!-- COSMÉTICO -->
+        <div class="product-card" data-cat="cosmetico">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/lussome-contorno-de-ojos-1.jpg" alt="Sérum Contorno de Ojos" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">💄 Cosmecéuticos · Lussôme</div>
+          <div class="product-name">Sérum Contorno de Ojos</div>
+          <div class="product-desc">Tratamiento de alta precisión para la piel delicada del contorno ocular. Reduce ojeras y bolsas.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="cosmetico">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/lussome-serum-hidratante.jpg" alt="Sérum Hidratante Concentrado" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">💄 Cosmecéuticos · Lussôme</div>
+          <div class="product-name">Sérum Hidratante Concentrado</div>
+          <div class="product-desc">Tratamiento facial de hidratación profunda. Piel radiante desde la primera aplicación.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+        <div class="product-card" data-cat="cosmetico">
+          <img src="https://xpandebienestar.com/wp-content/uploads/2022/03/lussome-serum-regenador-300x225.jpg" alt="Sérum Regenerador Concentrado" class="product-img" loading="lazy" onerror="this.style.display='none';this.closest('.product-card').dataset.noimg='1'">
+          <div class="product-cat-badge">💄 Cosmecéuticos · Lussôme</div>
+          <div class="product-name">Sérum Regenerador Concentrado</div>
+          <div class="product-desc">Tratamiento facial antiedad de alta concentración. Regeneración celular visible en semanas.</div>
+          <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="product-cta">Comprar ahora →</a>
+        </div>
+
+      </div><!-- /products-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════ COUNTRIES ═══════════ -->
+  <section id="countries">
+    <div class="max-w">
+      <div class="section-header reveal">
+        <div class="section-label">Cobertura global</div>
+        <div class="divider-line"></div>
+        <h2 class="section-title">Disponible en tu país</h2>
+        <p class="section-sub">Fuxion está presente en más de 50 países. Compra desde donde estés con envío a domicilio.</p>
+      </div>
+
+      <div class="country-stat reveal">
+        <div class="country-count">50+</div>
+        <p>países con tienda online oficial y entrega a domicilio</p>
+      </div>
+
+      <div class="regions-grid">
+        <div class="region-block reveal">
+          <div class="region-title">🌎 América Latina</div>
+          <div class="country-list">
+            <span class="country-pill">Argentina</span>
+            <span class="country-pill">Bolivia</span>
+            <span class="country-pill">Brasil</span>
+            <span class="country-pill">Chile</span>
+            <span class="country-pill">Colombia</span>
+            <span class="country-pill">Costa Rica</span>
+            <span class="country-pill">Ecuador</span>
+            <span class="country-pill">El Salvador</span>
+            <span class="country-pill">Guatemala</span>
+            <span class="country-pill">Honduras</span>
+            <span class="country-pill">México</span>
+            <span class="country-pill">Nicaragua</span>
+            <span class="country-pill">Panamá</span>
+            <span class="country-pill">Paraguay</span>
+            <span class="country-pill">Perú</span>
+            <span class="country-pill">Puerto Rico</span>
+            <span class="country-pill">Rep. Dominicana</span>
+            <span class="country-pill">Uruguay</span>
+            <span class="country-pill">Venezuela</span>
+          </div>
+        </div>
+
+        <div class="region-block reveal">
+          <div class="region-title">🌍 Europa</div>
+          <div class="country-list">
+            <span class="country-pill">Alemania</span>
+            <span class="country-pill">Austria</span>
+            <span class="country-pill">Bélgica</span>
+            <span class="country-pill">Chipre</span>
+            <span class="country-pill">Croacia</span>
+            <span class="country-pill">Eslovaquia</span>
+            <span class="country-pill">Eslovenia</span>
+            <span class="country-pill">España</span>
+            <span class="country-pill">Estonia</span>
+            <span class="country-pill">Finlandia</span>
+            <span class="country-pill">Francia</span>
+            <span class="country-pill">Grecia</span>
+            <span class="country-pill">Irlanda</span>
+            <span class="country-pill">Italia</span>
+            <span class="country-pill">Letonia</span>
+            <span class="country-pill">Lituania</span>
+            <span class="country-pill">Luxemburgo</span>
+            <span class="country-pill">Malta</span>
+            <span class="country-pill">Países Bajos</span>
+            <span class="country-pill">Portugal</span>
+            <span class="country-pill">Rusia</span>
+            <span class="country-pill">Ucrania</span>
+          </div>
+        </div>
+
+        <div class="region-block reveal">
+          <div class="region-title">🌏 Norteamérica</div>
+          <div class="country-list">
+            <span class="country-pill">Estados Unidos</span>
+            <span class="country-pill">Canadá</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:36px; text-align:center;" class="reveal">
+        <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="btn-hero green" style="display:inline-flex;">
+          Comprar desde mi país →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ NEGOCIO ═══════════ -->
+  <section id="negocio">
+    <div class="max-w">
+      <div class="section-header reveal">
+        <div class="section-label">Oportunidad de negocio</div>
+        <div class="divider-line"></div>
+        <h2 class="section-title">Gana mientras ayudas a otros</h2>
+        <p class="section-sub">
+          Como distribuidor independiente de FuXion construyes ingresos reales desde el día uno,
+          con dos fuentes de ganancias que se complementan.
+        </p>
+      </div>
+
+      <div class="biz-grid">
+
+        <div class="biz-card reveal">
+          <div class="biz-icon">🛒</div>
+          <div class="biz-pct">25–50%</div>
+          <div class="biz-title">Ganancias por venta directa</div>
+          <div class="biz-desc">
+            Cada producto que vendes te genera entre el 25% y el 50% de comisión inmediata.
+            Cuanto más vendes, mayor es tu porcentaje de ganancia.
+          </div>
+          <div class="biz-bar">
+            <div class="biz-bar-fill" style="width:75%"></div>
+          </div>
+        </div>
+
+        <div class="biz-card reveal">
+          <div class="biz-icon">🌱</div>
+          <div class="biz-pct">10%</div>
+          <div class="biz-title">Ganancias por tu equipo</div>
+          <div class="biz-desc">
+            Cuando construyes un equipo de distribuidores, recibes el 10% de las ventas
+            que genera tu red. Tu red trabaja, tú también ganas.
+          </div>
+          <div class="biz-bar">
+            <div class="biz-bar-fill" style="width:35%"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="biz-cta-wrap reveal">
+        <a href="https://wa.me/message/RZAF4BNYGMUEC1"
+           target="_blank" rel="noopener" class="btn-hero green">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quiero más información
+        </a>
+        <p class="biz-disclaimer">Los ingresos varían según el esfuerzo y dedicación de cada distribuidor independiente.</p>
+      </div>
+    </div>
+
+    <!-- Amazon silhouette separator -->
+    <div class="amazon-silhouette">
+      <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <!-- Far canopy -->
+        <path fill="#182e12"
+          d="M0,160 L0,96
+             Q60,92 95,84
+             Q130,74 168,60
+             Q204,74 242,84
+             Q280,92 320,88
+             Q358,80 398,65
+             Q436,80 476,88
+             Q515,94 555,90
+             Q594,82 634,65
+             Q672,82 712,90
+             Q752,94 792,90
+             Q830,82 870,66
+             Q908,82 948,90
+             Q988,94 1028,90
+             Q1068,82 1108,65
+             Q1147,82 1187,90
+             Q1228,94 1268,90
+             Q1308,82 1348,70
+             Q1388,78 1440,82
+          L1440,160 Z"/>
+        <!-- Front undergrowth -->
+        <path fill="#0b1d0c"
+          d="M0,160 L0,130
+             Q60,126 95,120
+             Q130,113 168,104
+             Q204,113 242,120
+             Q280,126 320,123
+             Q358,118 398,108
+             Q436,118 476,123
+             Q515,127 555,124
+             Q594,118 634,108
+             Q672,118 712,124
+             Q752,127 792,124
+             Q830,118 870,108
+             Q908,118 948,124
+             Q988,127 1028,124
+             Q1068,118 1108,108
+             Q1147,118 1187,124
+             Q1228,127 1268,124
+             Q1308,118 1348,110
+             Q1388,116 1440,118
+          L1440,160 Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA FINAL ═══════════ -->
+  <section id="cta">
+    <div class="cta-inner reveal">
+      <div class="section-label" style="margin-bottom:12px;">¿Listo para empezar?</div>
+      <div class="divider-line" style="margin:0 auto 16px;"></div>
+      <h2 class="section-title">Empieza tu transformación hoy</h2>
+      <p class="section-sub" style="margin: 0 auto;">
+        Escríbeme por WhatsApp y te oriento sobre qué productos son los más adecuados para tu objetivo.
+        Sin compromiso, con toda la información que necesitas.
+      </p>
+      <div class="cta-btns">
+        <a href="https://wa.me/message/RZAF4BNYGMUEC1" target="_blank" rel="noopener" class="btn-hero green">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribir por WhatsApp
+        </a>
+        <a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="btn-hero outline">
+          Tienda en línea →
+        </a>
+      </div>
+
+      <div class="social-row">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/message/RZAF4BNYGMUEC1" target="_blank" rel="noopener" class="social-btn" title="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/aristizabalalvarez.jerssonarly/" target="_blank" rel="noopener" class="social-btn" title="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://instagram.com/jersson.aristizabal" target="_blank" rel="noopener" class="social-btn" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FLOATING WA ═══════════ -->
+  <a href="https://wa.me/message/RZAF4BNYGMUEC1"
+     target="_blank" rel="noopener" class="wa-float" title="Escribir por WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <p>© 2026 <span>Jersson Aristizabal</span> · Vida Integral · Distribuidores Oficiales <span>Fuxion</span></p>
+  </footer>
+
+  <!-- ═══════════ JS ═══════════ -->
+  <script>
+    // ─── PRODUCT DETAILS DATA ───
+    var productDetails = {
+      'Prunex 1': {
+        ingredients: 'Ciruelas pasas, inulina de achicoria, extracto de sen, cáscara de naranja.',
+        benefits: ['Regula el tránsito intestinal de forma natural', 'Reduce la hinchazón y malestar abdominal', 'Limpieza completa del colon'],
+        uso: '1 stick en 200ml de agua, preferiblemente por las noches antes de dormir.'
+      },
+      'Flora Liv': {
+        ingredients: 'Probióticos Lactobacillus acidophilus, fibra prebiótica FOS, extracto de aloe vera.',
+        benefits: ['Restaura la flora bacteriana intestinal', 'Mejora la digestión y la absorción de nutrientes', 'Equilibra el microbioma después de antibióticos o estrés'],
+        uso: '1 stick en agua fría, en ayunas o entre comidas.'
+      },
+      'Alpha Balance': {
+        ingredients: 'Espirulina, clorela, wheatgrass, brócoli, espinaca, algas verde-azuladas.',
+        benefits: ['Alcaliniza el organismo y equilibra el pH', 'Potencia la energía celular sin estimulantes', 'Desintoxicación profunda a nivel metabólico'],
+        uso: '1 stick en 200ml de agua fría, 1-2 veces al día. Mejor por las mañanas.'
+      },
+      'Berry Balance': {
+        ingredients: 'Acai, arándano azul, frambuesa, goji, granada, mora, vitamina C natural.',
+        benefits: ['Potente acción antioxidante contra radicales libres', 'Protege las células del envejecimiento prematuro', 'Mejora el estado de la piel desde adentro'],
+        uso: '1 stick en 200ml de agua, a cualquier hora del día.'
+      },
+      'Rexet': {
+        ingredients: 'Cardo mariano estandarizado, alcachofa, diente de león, vitamina C, zinc.',
+        benefits: ['Apoya la función y salud hepática', 'Favorece el drenaje linfático natural', 'Desintoxicación y regeneración del hígado'],
+        uso: '1 sobre efervescente disuelto en agua, antes de las comidas principales.'
+      },
+      'Pack Detox 5 días': {
+        ingredients: 'Combinación de Prunex 1, Flora Liv y Berry Balance en protocolo específico.',
+        benefits: ['Depuración y limpieza intestinal completa en 5 días', 'Reinicio metabólico y eliminación de toxinas acumuladas', 'Resultados visibles desde el primer ciclo'],
+        uso: 'Seguir el protocolo incluido en el pack. Tomar cada producto en su horario indicado.'
+      },
+      'Biopro+ Tect': {
+        ingredients: 'Proteína de suero lácteo WPC, colostrum bovino, vitaminas A, C, D, E, minerales esenciales.',
+        benefits: ['Regeneración celular acelerada', 'Fortalece y activa el sistema inmunológico', 'Soporte nutricional completo para adultos activos'],
+        uso: '1 medida (20g) en 200ml de agua o leche, 1-2 veces al día. Ideal en el desayuno.'
+      },
+      'Protein Active': {
+        ingredients: 'Proteína de guisante aislada, proteína de arroz integral, proteína de cáñamo, BCAA.',
+        benefits: ['Construcción y recuperación muscular 100% vegetal', 'Alta biodisponibilidad de aminoácidos esenciales', 'Saciedad prolongada y control del apetito'],
+        uso: '1 medida en 250ml de agua o bebida vegetal, antes o después del ejercicio.'
+      },
+      'Vita Xtra T+': {
+        ingredients: 'Extracto de té verde EGCG, ginkgo biloba, complejo vitamínico B, zinc, selenio.',
+        benefits: ['Energía sostenida sin picos ni bajones', 'Mejora la concentración y el rendimiento mental', 'Antioxidante de alto espectro para la salud celular'],
+        uso: '1 stick en agua fría, preferiblemente por las mañanas.'
+      },
+      'Xpeed': {
+        ingredients: 'Extracto de guaraná, taurina, L-carnitina tartrato, vitamina B12, ginseng coreano.',
+        benefits: ['Energía inmediata y activación mental potente', 'Aumenta el rendimiento físico y la resistencia', 'Mejora el foco y la claridad cognitiva'],
+        uso: '1 stick en 200ml de agua fría, 15-30 min antes de actividad o cuando necesites energía.'
+      },
+      'Nutraday': {
+        ingredients: 'Vitaminas A, C, D3, E, K2, complejo B completo, magnesio, zinc, selenio, cromo.',
+        benefits: ['Nutrición vitamínica y mineral completa en un solo stick', 'Refuerza el sistema inmune y la energía diaria', 'Cubre carencias nutricionales habituales en la dieta moderna'],
+        uso: '1 stick en agua por las mañanas durante el desayuno.'
+      },
+      'Pack 5/14 Keto': {
+        ingredients: 'Proteína cetogénica, MCT oil, L-carnitina, cetona de frambuesa, cromo.',
+        benefits: ['Induce y mantiene el estado de cetosis', 'Quema de grasa como fuente principal de energía', 'Saciedad prolongada y control del apetito'],
+        uso: 'Seguir el protocolo keto de 14 días incluido. Comenzar con 5 días de adaptación.'
+      },
+      'Thermo T3': {
+        ingredients: 'Extracto de té verde (EGCG), capsaicina, jengibre, canela, piperina de pimienta negra.',
+        benefits: ['Activa el metabolismo y la termogénesis natural', 'Favorece la quema de grasa abdominal', 'Suprime el apetito de forma natural'],
+        uso: '1 stick en agua fría, 30 min antes del desayuno o entrenamiento. No tomar por la noche.'
+      },
+      'Café & Café Fit': {
+        ingredients: 'Café arábica de alta calidad, extracto Svetol® de café verde, cromo, ácido clorogénico.',
+        benefits: ['Quema de grasa potenciada por el café verde', 'Control natural del apetito sin ansiedad', 'Energía limpia sin nerviosismo'],
+        uso: '1 stick en 200ml de agua caliente por las mañanas como sustituto del café habitual.'
+      },
+      'Nocarb-T': {
+        ingredients: 'Fibra de glucomanano (konjac), nopal, extracto de té verde, cromo, vitamina C.',
+        benefits: ['Bloquea parcialmente la absorción de carbohidratos', 'Saciedad prolongada antes de las comidas', 'Ayuda a mantener estables los niveles de glucosa'],
+        uso: '1 stick en agua, 15 minutos antes de las comidas principales.'
+      },
+      'Chocolate Fit': {
+        ingredients: 'Cacao puro desgrasado, proteína de suero, L-carnitina tartrato, esteroles vegetales, stevia.',
+        benefits: ['Satisface el antojo de dulce sin culpa', 'Saciedad como merienda o postre sustitutivo', 'Favorece la quema de grasa con L-carnitina'],
+        uso: '1 stick en 200ml de agua caliente o fría como merienda saludable o postre.'
+      },
+      'Beauty-In': {
+        ingredients: 'Colágeno hidrolizado tipo I y III, ácido hialurónico de bajo peso molecular, vitamina C, zinc.',
+        benefits: ['Mejora la firmeza y elasticidad de la piel', 'Hidratación profunda desde el interior', 'Reducción visible de arrugas finas en 4-8 semanas'],
+        uso: '1 stick en 200ml de agua fría, en ayunas por la mañana para máxima absorción.'
+      },
+      'Youth Elixir': {
+        ingredients: 'Resveratrol, coenzima Q10, astaxantina, aminoácidos esenciales, vitamina E.',
+        benefits: ['Combate el envejecimiento celular desde adentro', 'Potencia la energía mitocondrial', 'Antioxidante de triple acción para piel y órganos'],
+        uso: '1 stick en agua, preferiblemente por las mañanas o a media tarde.'
+      },
+      'Golden Flx': {
+        ingredients: 'Cúrcuma estandarizada (95% curcuminoides), piperina, jengibre, vitamina D3, omega-3.',
+        benefits: ['Antiinflamatorio natural de alta potencia', 'Protege articulaciones y reduce el dolor crónico', 'Refuerza el sistema inmune'],
+        uso: '1 stick en agua caliente o fría, 1-2 veces al día con las comidas.'
+      },
+      'Vera+': {
+        ingredients: 'Aloe vera 200:1, equinácea purpúrea, propóleo, vitamina C 500mg, zinc, vitamina D3.',
+        benefits: ['Fortalece las defensas naturales del sistema inmune', 'Propiedades antiinflamatorias y cicatrizantes', 'Apoya la salud de las mucosas respiratorias'],
+        uso: '1 stick en agua fría, 1-2 veces al día. En temporadas de gripe o estrés, 2 veces.'
+      },
+      'Gano+ Capuccino': {
+        ingredients: 'Café arábica premium, extracto de ganoderma lucidum (hongo reishi), cacao, adaptógenos naturales.',
+        benefits: ['Activa el sistema inmune con el poder del ganoderma', 'Energía equilibrada sin el nerviosismo del café normal', 'Adaptógeno: ayuda al cuerpo a gestionar el estrés'],
+        uso: '1 stick en 200ml de agua caliente. Úsalo como tu café habitual de la mañana.'
+      },
+      'Gano+ T': {
+        ingredients: 'Té blanco de primera cosecha, ganoderma lucidum estandarizado, antioxidantes, L-teanina.',
+        benefits: ['Protección inmunológica sostenida a lo largo del día', 'Potente antioxidante con propiedades estudiadas clínicamente', 'Energía tranquila y equilibrada gracias a la L-teanina'],
+        uso: '1 stick en agua caliente, 1-2 tazas al día en cualquier momento.'
+      },
+      'Duo Defense': {
+        ingredients: 'Sinergia de Vera+ (aloe, equinácea, propóleo) y Gano+ T (ganoderma, té blanco, L-teanina).',
+        benefits: ['Doble protección inmunológica simultánea', 'Mayor eficacia antioxidante por sinergia de ingredientes', 'Cobertura inmune de mañana y tarde'],
+        uso: 'Gano+ T por la mañana, Vera+ al mediodía o por la tarde.'
+      },
+      'On': {
+        ingredients: 'Guaraná, L-teanina, bacopa monnieri, vitaminas B6 y B12, ginkgo biloba, fosfatidilserina.',
+        benefits: ['Concentración y foco mental potenciado', 'Mejora la memoria y el aprendizaje', 'Claridad cognitiva sostenida sin ansiedad'],
+        uso: '1 stick en agua fría, 20-30 min antes de trabajo intelectual o estudio.'
+      },
+      'No Stress': {
+        ingredients: 'GABA, L-triptófano (precursor de serotonina), ashwagandha KSM-66, magnesio bisglicinato, valeriana.',
+        benefits: ['Reduce la ansiedad y el nerviosismo de forma natural', 'Mejora la calidad del sueño sin efecto sedante al día siguiente', 'Manejo del estrés crónico y la tensión acumulada'],
+        uso: '1 stick en agua, 30-45 min antes de dormir o en momentos de estrés agudo. No combinar con alcohol.'
+      },
+      'Pre Sport': {
+        ingredients: 'Cafeína anhidra, beta-alanina, L-citrulina malato, creatina monohidratada, vitaminas B1 y B6.',
+        benefits: ['Maximiza el rendimiento en entrenamientos de alta intensidad', 'Aumenta la resistencia y retrasa la fatiga muscular', 'Potencia el flujo sanguíneo y el bombeo muscular'],
+        uso: '1 stick en 250ml de agua fría, 20-30 min antes de comenzar el entrenamiento.'
+      },
+      'Post Sport': {
+        ingredients: 'BCAA 4:1:1 (leucina, isoleucina, valina), L-glutamina, magnesio, vitamina C, electrolitos.',
+        benefits: ['Acelera la recuperación muscular post-entrenamiento', 'Reduce las agujetas y el daño muscular oxidativo', 'Rehidratación inteligente con electrolitos naturales'],
+        uso: '1 stick en 300ml de agua inmediatamente después del ejercicio.'
+      },
+      'Xtra Mile': {
+        ingredients: 'Sodio, potasio, magnesio, calcio, vitamina B6, carbohidratos de absorción rápida, vitamina C.',
+        benefits: ['Hidratación óptima durante la actividad física prolongada', 'Mantiene el rendimiento en entrenamientos de más de 60 min', 'Previene los calambres musculares'],
+        uso: '1 stick en 500ml de agua, sorber durante el entrenamiento o actividad prolongada.'
+      },
+      'Biopro+ Sport': {
+        ingredients: 'Proteína de suero WPC 80%, creatina monohidratada, BCAA de alta proporción, glutamina, zinc.',
+        benefits: ['Desarrollo y mantenimiento de masa muscular magra', 'Recuperación acelerada entre sesiones de entrenamiento', 'Rendimiento y fuerza deportiva sostenida'],
+        uso: '1 medida en 250ml de agua o leche post-entrenamiento o entre comidas.'
+      },
+      'Sérum Contorno de Ojos': {
+        ingredients: 'Retinol microencapsulado, ácido hialurónico (3 pesos moleculares), cafeína, péptidos anti-arrugas, vitamina K.',
+        benefits: ['Reduce visiblemente ojeras y bolsas en 4-6 semanas', 'Atenúa las arrugas de expresión alrededor del ojo', 'Hidratación intensa en la zona más delicada del rostro'],
+        uso: 'Pequeña cantidad mañana y noche con suaves golpecitos hasta absorción. No frotar.'
+      },
+      'Sérum Hidratante Concentrado': {
+        ingredients: 'Ácido hialurónico 3D (alto, medio y bajo peso), niacinamida 10%, aloe vera, vitamina E.',
+        benefits: ['Hidratación profunda que dura hasta 72 horas', 'Minimiza el aspecto de los poros dilatados', 'Unifica el tono y aporta luminosidad natural'],
+        uso: '2-3 gotas sobre piel limpia mañana y noche, antes de la crema hidratante habitual.'
+      },
+      'Sérum Regenerador Concentrado': {
+        ingredients: 'Retinol 0,3%, bakuchiol (retinol vegetal), coenzima Q10, vitamina C estabilizada, péptidos de señalización.',
+        benefits: ['Regeneración celular visible desde la primera semana de uso', 'Reduce manchas y unifica el tono del rostro', 'Aumenta la firmeza y densidad de la piel'],
+        uso: '2-3 gotas por la noche sobre piel completamente limpia y seca. Puede combinarse con crema hidratante.'
+      }
+    };
+
+    // ─── MODAL ───
+    var backdrop = document.createElement('div');
+    backdrop.className = 'modal-backdrop';
+    backdrop.innerHTML =
+      '<div class="modal-panel" id="modalPanel">' +
+        '<button class="modal-close" id="modalClose">✕</button>' +
+        '<img class="modal-img" id="modalImg" src="" alt="">' +
+        '<div class="modal-badge" id="modalBadge"></div>' +
+        '<div class="modal-name" id="modalName"></div>' +
+        '<div class="modal-block"><div class="modal-label">Ingredientes clave</div><div class="modal-text" id="modalIngr"></div></div>' +
+        '<div class="modal-block"><div class="modal-label">Beneficios</div><ul class="modal-list" id="modalBenef"></ul></div>' +
+        '<div class="modal-block"><div class="modal-label" id="modalUsoLabel">Modo de uso</div><div class="modal-text" id="modalUso"></div></div>' +
+        '<a href="http://ifuxion.com/Jerssonaristizabal" target="_blank" rel="noopener" class="modal-cta">Comprar ahora →</a>' +
+      '</div>';
+    document.body.appendChild(backdrop);
+
+    function openModal(card, name, data) {
+      var img = card.querySelector('.product-img');
+      var badge = card.querySelector('.product-cat-badge');
+      var mImg  = document.getElementById('modalImg');
+      if (img && img.style.display !== 'none' && img.naturalWidth > 0) {
+        mImg.src = img.src;
+        mImg.alt = name;
+        mImg.classList.remove('hidden');
+      } else {
+        mImg.classList.add('hidden');
+      }
+      document.getElementById('modalBadge').textContent  = badge ? badge.textContent : '';
+      document.getElementById('modalName').textContent   = name;
+      document.getElementById('modalIngr').textContent   = data.ingredients;
+      document.getElementById('modalBenef').innerHTML    = data.benefits.map(function(b) { return '<li>' + b + '</li>'; }).join('');
+      document.getElementById('modalUsoLabel').textContent = name.indexOf('Sérum') !== -1 ? 'Modo de aplicación' : 'Modo de uso';
+      document.getElementById('modalUso').textContent    = data.uso;
+      backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      backdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+    // ─── ADD TOGGLE BUTTONS TO PRODUCT CARDS ───
+    document.querySelectorAll('.product-card').forEach(function(card) {
+      var nameEl = card.querySelector('.product-name');
+      if (!nameEl) return;
+      var name = nameEl.textContent.trim();
+      var data = productDetails[name];
+      if (!data) return;
+
+      var toggle = document.createElement('button');
+      toggle.className = 'product-toggle';
+      toggle.innerHTML = 'Ver detalles &nbsp;↗';
+      toggle.addEventListener('click', function() { openModal(card, name, data); });
+      card.appendChild(toggle);
+    });
+
+    // ─── ACCORDION FUXION ───
+    document.querySelectorAll('.accordion-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.accordion-item');
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.accordion-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // ─── SORT CARDS WITHOUT IMAGE ───
+    var grid = document.getElementById('productsGrid');
+
+    function sortCards() {
+      var allCards = Array.prototype.slice.call(grid.querySelectorAll('.product-card'));
+      allCards.filter(function(c) {
+        var img = c.querySelector('.product-img');
+        return !(img && img.style.display !== 'none' && img.naturalWidth > 0);
+      }).forEach(function(c) { grid.appendChild(c); });
+    }
+
+    window.addEventListener('load', sortCards);
+
+    // ─── CATEGORY FILTER ───
+    var catBtns = document.querySelectorAll('.cat-btn');
+    var cards   = document.querySelectorAll('.product-card');
+
+    catBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        catBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.dataset.cat;
+        cards.forEach(function(card) {
+          if (cat === 'all' || card.dataset.cat === cat) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // ─── SCROLL REVEAL ───
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+  </script>
+
+</body>
+</html>
